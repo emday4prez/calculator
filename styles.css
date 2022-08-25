@@ -54,7 +54,7 @@ body{
  align-items: center;
  justify-content: center;
  border: 1px white;
- margin: 1rem
+ margin: 2rem
 }
 .reset-buttons button{
  width:50%;
@@ -63,6 +63,27 @@ body{
  border: transparent;
  border-radius: 6px;
  font-size: large;
+ box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.buttons{
+ height: 260px;
+ width:290px;
+ align-self: center;
+ margin-left: 1rem;
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ grid-template-rows: repeat(4, 1fr);
+ gap: .75rem;
+}
+.buttons button{
+ border-radius: 50%;
+ border: none;
+ height:50px;
+ width: 50px;
+ align-self: center;
+ font-size: 1.5rem;
+ box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 @media (prefers-color-scheme: light) {
  :root {
