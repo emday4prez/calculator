@@ -7,7 +7,7 @@
 
 ## Overview
 
-This is a calculator based on the legendary design by Dieter Rams for the Braun ET-44 and Et-66 calculators released in 1977 and 1987.
+This is a calculator based on the legendary design by Dieter Rams for the Braun ET-44 and ET-66 calculators released in 1977 and 1987.
 
 
 ### Links
