@@ -1,3 +1,6 @@
+*, *::before, *::after{
+ box-sizing: border-box;
+}
 :root {
  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
  font-size: 16px;
@@ -20,7 +23,7 @@ body{
  margin: 0 auto;
  padding: 2rem;
  text-align: center;
- 
+ min-height: 100vh;
 }
 .calculator{
  display: flex;
@@ -34,18 +37,40 @@ body{
  border-radius: 16px 16px 48px 48px;
  text-align: left;
 }
+
 .title{
  color: lightgrey;
  font-size: 1.5rem;
  margin: 3rem 2.5rem 1rem;
 }
+
 .display{
+ display: flex;
+ flex-direction: column;
+ text-align: right;
  background-color: #cbcec5;
+ word-wrap: break-word;
+ word-break: break-all;
  width: 290px;
  height: 100px;
  align-self: center;
- border-radius: 8px;;
+ border-radius: 8px;
+ 
  box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, 0.6);
+}
+
+.previous-operand{
+ margin:1rem;
+ text-align: right;
+ font-family: 'Orbitron', sans-serif;
+}
+
+.current-operand{
+ margin:1rem;
+ text-align: right;
+ font-size: 3rem;
+ font-family: 'Orbitron', sans-serif;
+ align-self: baseline;
 }
 .reset-buttons{
  width: 290px;
@@ -64,6 +89,9 @@ body{
  border-radius: 6px;
  font-size: large;
  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.reset-buttons button:hover{
+ cursor:pointer;
 }
 
 .buttons{
@@ -85,6 +113,9 @@ body{
  font-size: 1.5rem;
  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+.buttons button:hover{
+  cursor: pointer;
+ }
 @media (prefers-color-scheme: light) {
  :root {
   color: #213547;
