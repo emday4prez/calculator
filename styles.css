@@ -63,6 +63,7 @@ body{
  margin:.5rem;
  text-align: right;
  font-family: 'Orbitron', sans-serif;
+ min-height: 1.5rem;
 }
 
 .current-operand{
@@ -90,9 +91,11 @@ body{
  border-radius: 6px;
  font-size: large;
  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+background: conic-gradient(from 180deg at 0 0, grey,white);
 }
 .reset-buttons button:hover{
  cursor:pointer;
+ box-shadow: none;
 }
 
 .buttons{
@@ -116,6 +119,20 @@ body{
 }
 .buttons button:hover{
   cursor: pointer;
+  box-shadow: none;
+ }
+
+ .number{
+  background: conic-gradient(from 180deg at 0 0, white, black);
+  color: white;
+ }
+ .equals{
+  background: conic-gradient( from 180deg at 0 0, peru, orange);
+  color:#213547;
+ }
+
+ .operator #decimal{
+  background:conic-gradient(from 180deg at 0 0, grey,white, );
  }
 @media (prefers-color-scheme: light) {
  :root {

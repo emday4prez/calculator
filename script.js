@@ -4,16 +4,22 @@ class Calculator {
         this.currentOperandTextElement = currentOperandTextElement
         this.clear()
     }
+
     clear() {
         this.currentOperand = ''
         this.previousOperand = ''
         this.operation = undefined
     }
-    delete() {}
+
+    delete() {
+        this.currentOperand = this.currentOperand.toString().slice(0, -1)
+    }
+
     appendNumber(number) {
         if (number === '.' && this.currentOperand.includes('.')) return
         this.currentOperand = this.currentOperand.toString() + number.toString()
     }
+
     chooseOperation(operation) {
         if (this.currentOperand === '') return
         if (this.previousOperand !== '') {
@@ -23,23 +29,50 @@ class Calculator {
         this.previousOperand = this.currentOperand
         this.currentOperand = ''
     }
+
     compute() {
         let computation
         const prev = parseFloat(this.previousOperand)
         const current = parseFloat(this.currentOperand)
-        if(isNaN(prev) || isNaN(current)) return
+        if (isNaN(prev) || isNaN(current)) return
 
         computation = operate(this.operation, prev, current)
         this.currentOperand = computation
         this.operation = undefined
         this.previousOperand = ''
     }
+    getDisplayNumber(number) {
+        const stringNumber = number.toString()
+        const integerDigits = parseFloat(stringNumber.split('.')[0])
+        const decimalDigits = stringNumber.split('.')[1]
+        let integerDisplay
+        if (isNaN(integerDigits)) {
+            integerDisplay = ''
+        } else {
+            integerDisplay = integerDigits.toLocaleString('en', {
+                maximumFractionDigits: 0})
+        }
+        if (decimalDigits != null) {
+            return `${integerDisplay}.${decimalDigits}`
+        } else {
+            return integerDisplay
+        }
+    }
+
     updateDisplay() {
-        this.currentOperandTextElement.innerText = this.currentOperand
-        this.previousOperandTextElement.innerText = this.previousOperand
+        this.currentOperandTextElement.innerText = this.getDisplayNumber(
+            this.currentOperand
+        )
+        if (this.operation != null) {
+            this.previousOperandTextElement.innerText = `${this.getDisplayNumber(
+                this.previousOperand
+            )} ${this.operation} `
+        }else{
+            this.previousOperandTextElement.innerText = ''
+        }
     }
 }
-
+// storing DOM elements in constants
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
@@ -52,11 +85,13 @@ const currentOperandTextElement = document.querySelector(
     '[data-current-operand]'
 )
 
+// create calculator instance
 const calculator = new Calculator(
     previousOperandTextElement,
     currentOperandTextElement
 )
 
+// adding event listeners for display
 numberButtons.forEach((button) => {
     button.addEventListener('click', () => {
         calculator.appendNumber(button.innerText)
@@ -71,6 +106,7 @@ operationButtons.forEach((button) => {
     })
 })
 
+// event listeners for utility buttons
 equalsButton.addEventListener('click', (button) => {
     calculator.compute()
     calculator.updateDisplay()
@@ -79,7 +115,12 @@ allClearButton.addEventListener('click', (button) => {
     calculator.clear()
     calculator.updateDisplay()
 })
+deleteButton.addEventListener('click', (button) => {
+    calculator.delete()
+    calculator.updateDisplay()
+})
 
+//evaluation functions
 function add(n1, n2) {
     return n1 + n2
 }
