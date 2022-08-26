@@ -6,7 +6,6 @@
 
   - [Overview](#overview)
   - [Links](#links)
-  - [My process](#my-process)
   - [Built with](#built-with)
   - [Original Design](#original-design)
  
