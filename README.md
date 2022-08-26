@@ -13,12 +13,12 @@
 
 ## Overview
 
-This is a calculator based on the legendary design by Dieter Rams for the Braun ET-66 calculator released in 1987.
+This is a calculator based on the legendary design by Dieter Rams for the Braun ET-44 and Et-66 calculators released in 1977 and 1987.
 
 
 ### Links
 
-- Live Site URL: [Netlify](https://smart-home-site-landing-page.netlify.app/)
+- Live Site URL: [GHPages](https://emday4prez.github.io/calculator/)
 
 
 
