@@ -2,12 +2,7 @@
 
 <img src="/screenshots/calc.png" alt="screenshot of calculator" title="Screenshot">
 
-## Table of contents
 
-  - [Overview](#overview)
-  - [Links](#links)
-  - [Built with](#built-with)
-  - [Original Design](#original-design)
  
 
 ## Overview
