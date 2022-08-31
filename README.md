@@ -19,7 +19,7 @@ This is a calculator based on the legendary design by Dieter Rams for the Braun 
 ### Built with
 - HTML
 - CSS
-- Vanilla JS
+- JavaScript
 
 
 ### Original Design
